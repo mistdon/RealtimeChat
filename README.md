@@ -137,6 +137,13 @@ This is a native iOS Messenger app, with audio/video calls and realtime chat con
 
 Do you have any questions or idea? My email is: info@relatedcode.com or you can find some more info at [relatedcode.com](http://relatedcode.com)
 
+
+## Attention
+
+This demo is just used for study, all right are belong to the origin owner.
+
+It's only supported for phone login, the test phone number is 17700001111, and the code is 666666
+
 ## LICENSE
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
