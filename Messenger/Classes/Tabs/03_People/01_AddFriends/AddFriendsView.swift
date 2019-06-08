@@ -182,7 +182,7 @@ class AddFriendsView: UIViewController, UISearchBarDelegate, UITableViewDataSour
 
 		let user = sections[indexPath.section][indexPath.row]
 
-		if (user.isCurrent() == false) {
+		if (user.isCurrent() == true) {
 			createFriend(user: user)
 		} else {
 			ProgressHUD.showSuccess("This is you.")

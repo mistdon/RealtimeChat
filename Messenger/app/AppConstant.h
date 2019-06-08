@@ -206,6 +206,7 @@
 //---------------------------------------------------------------------------------
 #define		FUSER_PATH							@"User"					//	Path name
 #define		FUSER_OBJECTID						@"objectId"				//	String
+#define     FUSER_AUTHID                        @"authId"               //  String
 
 #define		FUSER_EMAIL							@"email"				//	String
 #define		FUSER_PHONE							@"phone"				//	String

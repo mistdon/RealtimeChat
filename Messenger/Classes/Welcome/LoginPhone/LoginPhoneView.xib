@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginPhoneView1">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginPhoneView" customModule="app" customModuleProvider="target">
             <connections>
-                <outlet property="fieldPhone" destination="7kZ-nZ-cAW" id="FFy-Dz-qp3"/>
-                <outlet property="labelCode" destination="xQA-wn-GEM" id="HHP-b8-Ueq"/>
-                <outlet property="labelName" destination="xuj-kz-hgP" id="tdB-V0-fGt"/>
+                <outlet property="fieldPhone" destination="7kZ-nZ-cAW" id="QEa-bd-HM5"/>
+                <outlet property="labelCode" destination="xQA-wn-GEM" id="BpS-F3-dfj"/>
+                <outlet property="labelName" destination="xuj-kz-hgP" id="Q7j-Zf-Ga7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -59,6 +59,7 @@ phone number</string>
                     </state>
                     <connections>
                         <action selector="actionCountries:" destination="-1" eventType="touchUpInside" id="2Cv-FP-Vqf"/>
+                        <action selector="selectCountryAction:" destination="-1" eventType="touchUpInside" id="7jg-eg-C5v"/>
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gHl-n0-INi">
@@ -68,7 +69,7 @@ phone number</string>
                         <constraint firstAttribute="height" constant="1" id="shK-SR-d6A"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQA-wn-GEM">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQA-wn-GEM">
                     <rect key="frame" x="16" y="150" width="50" height="50"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="32I-5z-q3N"/>

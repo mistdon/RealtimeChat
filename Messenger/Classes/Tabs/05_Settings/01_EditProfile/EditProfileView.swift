@@ -94,9 +94,9 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 		fieldLocation.text = user[FUSER_LOCATION] as? String
 
 		fieldPhone.text = user[FUSER_PHONE] as? String
-
+        user[FUSER_LOGINMETHOD] = LOGIN_PHONE
 		let loginMethod = user[FUSER_LOGINMETHOD] as? String
-		fieldPhone.isUserInteractionEnabled = (loginMethod != LOGIN_PHONE)
+		fieldPhone.isUserInteractionEnabled = (loginMethod == LOGIN_PHONE)
 
 		updateDetails()
 	}
@@ -113,8 +113,9 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 		user[FUSER_LOCATION] = location
 		user[FUSER_PHONE] = phone
 
-		user.saveInBackground(block: { error in
+		user.saveInBackground(block: { [weak self]error in
 			if (error == nil) {
+                self?.dismiss(animated: true)
 				Account.update()
 			} else {
 				ProgressHUD.showError("Network error.")
@@ -157,7 +158,8 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 	@objc func actionCancel() {
 
 		if (isOnboard) {
-			LogoutUser(delAccount: DEL_ACCOUNT_ALL)
+            // Cancel edit profile make user log out ??? Bad design! add by shendong.
+//            LogoutUser(delAccount: DEL_ACCOUNT_ALL)
 		}
 		dismiss(animated: true)
 	}
@@ -171,7 +173,7 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 		let location = fieldLocation.text ?? ""
 		let phone = fieldPhone.text ?? ""
 
-		if (firstname.count == 0)	{ ProgressHUD.showError("Firstname must be set.");		return	}
+        if (firstname.count == 0)    { ProgressHUD.showError("Firstname must be set.");        return    }
 		if (lastname.count == 0)	{ ProgressHUD.showError("Lastname must be set.");		return	}
 		if (country.count == 0)		{ ProgressHUD.showError("Country must be set.");		return	}
 		if (location.count == 0)	{ ProgressHUD.showError("Location must be set.");		return	}
@@ -179,7 +181,8 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 
 		saveUser(firstname: firstname, lastname: lastname, country: country, location: location, phone: phone)
 
-		dismiss(animated: true)
+        
+		
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------

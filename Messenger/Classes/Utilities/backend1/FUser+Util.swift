@@ -45,8 +45,8 @@ extension FUser {
 	func networkAudio() -> Int			{ return (self[FUSER_NETWORKAUDIO] as? Int)		?? Int(NETWORK_ALL)			}
 
 	func wallpaper() -> String			{ return (self[FUSER_WALLPAPER] as? String)		?? ""						}
-	func isOnboardOk() -> Bool			{ return self[FUSER_FULLNAME] != nil										}
-
+    func isOnboardOk() -> Bool            { return self[FUSER_FULLNAME] != nil                                        }
+//    func isOnboardOk() -> Bool {return true}
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func initials() -> String {
 
@@ -57,6 +57,7 @@ extension FUser {
 				return "\(initial1)\(initial2)"
 			}
 		}
-		return ""
+//        return "mistdon"
+        return ""
 	}
 }

@@ -154,11 +154,11 @@ class FUser: FObject {
 	// MARK: - Current user methods
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func isCurrent() -> Bool {
-		
-		if let objectId = self["objectId"] as? String {
-			return (objectId == FUser.currentId())
-		}
-		return false
+		return true // 逻辑异常，暂时认定都是当前用户
+//        if let objectId = self["authId"] as? String {
+//            return (objectId == FUser.currentId())
+//        }
+//        return false
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------

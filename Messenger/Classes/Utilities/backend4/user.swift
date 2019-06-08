@@ -34,9 +34,12 @@ func LogoutUser(delAccount: Int32) {
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 func LoginUser(target: Any) {
 
+    
+    
 	let viewController = target as! UIViewController
 	let welcomeView = WelcomeView()
-	viewController.present(welcomeView, animated: true) {
+    let navController = NavigationController(rootViewController: welcomeView)
+	viewController.present(navController, animated: true) {
 		viewController.tabBarController?.selectedIndex = Int(DEFAULT_TAB)
 	}
 }
@@ -65,7 +68,8 @@ func UserLoggedIn(loginMethod: String) {
 	} else {
 		ProgressHUD.showSuccess("Welcome!")
 	}
-
+    let user = FUser.currentUser()
+    user[FUSER_AUTHID] = Auth.auth().currentUser
 	NotificationCenterX.post(notification: NOTIFICATION_USER_LOGGED_IN)
 }
 

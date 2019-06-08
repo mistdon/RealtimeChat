@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VerifySMSView">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VerifySMSView" customModule="app" customModuleProvider="target">
             <connections>
-                <outlet property="fieldCode" destination="s54-xx-P4e" id="Cdt-Yt-9NS"/>
-                <outlet property="labelHeader" destination="b09-06-kBx" id="Wiw-SW-PrP"/>
+                <outlet property="delegate" destination="s54-xx-P4e" id="iCt-a4-iWe"/>
+                <outlet property="fieldCode" destination="s54-xx-P4e" id="jDw-eg-baE"/>
+                <outlet property="labelHeader" destination="b09-06-kBx" id="4lH-F6-GDp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -58,6 +59,21 @@
                         <constraint firstAttribute="height" constant="1" id="6h1-14-dbx"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2w-tX-PWO">
+                    <rect key="frame" x="60" y="207" width="200" height="44"/>
+                    <color key="backgroundColor" red="0.40000000000000002" green="0.39607843139999999" blue="0.21551658291830988" alpha="0.32009242957746481" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="EhS-hp-3F7"/>
+                        <constraint firstAttribute="width" constant="200" id="xgr-0m-0UY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <state key="normal" title="Login">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="startLogin" destination="-1" eventType="touchUpInside" id="iEf-K0-ol5"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -70,7 +86,9 @@
                 <constraint firstItem="b09-06-kBx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="aUh-dS-3kO"/>
                 <constraint firstAttribute="trailing" secondItem="b09-06-kBx" secondAttribute="trailing" id="e5S-GL-qED"/>
                 <constraint firstItem="rjx-fg-kNP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="170" id="i82-5c-8s6"/>
+                <constraint firstItem="f2w-tX-PWO" firstAttribute="top" secondItem="s54-xx-P4e" secondAttribute="bottom" constant="37" id="iCh-hl-Ywm"/>
                 <constraint firstAttribute="trailing" secondItem="s54-xx-P4e" secondAttribute="trailing" constant="16" id="nyX-Kc-zXr"/>
+                <constraint firstItem="f2w-tX-PWO" firstAttribute="centerX" secondItem="s54-xx-P4e" secondAttribute="centerX" id="qjJ-3W-YaB"/>
                 <constraint firstItem="rjx-fg-kNP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yJw-Ml-Z90"/>
                 <constraint firstItem="b09-06-kBx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="z72-3P-rDN"/>
             </constraints>

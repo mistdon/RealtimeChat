@@ -21,28 +21,9 @@ class WelcomeView: UIViewController, LoginGoogleDelegate, LoginPhoneDelegate, Lo
 	// MARK: - Phone login methods
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	@IBAction func actionLoginPhone(_ sender: Any) {
-
+        let vc = LoginPhoneView()
+        self.navigationController?.show(vc, sender: nil)
 //        AdvertPremium(target: self);
-        let phoneNumber = "+117700001111"
-        let testVerificationCode = "666666"
-        Auth.auth().settings?.isAppVerificationDisabledForTesting = true
-        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { (verificationId, error) in
-            if (error != nil){
-                print(error?.localizedDescription)
-                return
-            }
-            let credential = PhoneAuthProvider.provider().credential(withVerificationID: verificationId ?? "", verificationCode: testVerificationCode)
-            Auth.auth().signInAndRetrieveData(with: credential, completion: { [weak self](authData, error) in
-                if(error != nil){
-                    print(error?.localizedDescription)
-                    return
-                }
-                print(authData?.user)
-                self?.dismiss(animated: true, completion: {
-                    UserLoggedIn(loginMethod: LOGIN_PHONE)
-                })
-            })
-        }
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
