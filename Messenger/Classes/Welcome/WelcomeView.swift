@@ -22,7 +22,27 @@ class WelcomeView: UIViewController, LoginGoogleDelegate, LoginPhoneDelegate, Lo
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	@IBAction func actionLoginPhone(_ sender: Any) {
 
-		AdvertPremium(target: self);
+//        AdvertPremium(target: self);
+        let phoneNumber = "+117700001111"
+        let testVerificationCode = "666666"
+        Auth.auth().settings?.isAppVerificationDisabledForTesting = true
+        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { (verificationId, error) in
+            if (error != nil){
+                print(error?.localizedDescription)
+                return
+            }
+            let credential = PhoneAuthProvider.provider().credential(withVerificationID: verificationId ?? "", verificationCode: testVerificationCode)
+            Auth.auth().signInAndRetrieveData(with: credential, completion: { [weak self](authData, error) in
+                if(error != nil){
+                    print(error?.localizedDescription)
+                    return
+                }
+                print(authData?.user)
+                self?.dismiss(animated: true, completion: {
+                    UserLoggedIn(loginMethod: LOGIN_PHONE)
+                })
+            })
+        }
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------

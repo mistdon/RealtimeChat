@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>聊天宝</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -26,6 +28,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.googleusercontent.apps.872644866295-21gmsk7fhkblagpb4vij5l5h0vv3092b</string>
+				<string>com.googleusercontent.apps.790408628679-hubves5cboegq6u2ldsp75mshng57ce4</string>
 			</array>
 		</dict>
 	</array>
